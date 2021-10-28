@@ -20,7 +20,7 @@ const client = new MongoClient(uri, {
     useUnifiedTopology: true,
 });
 
-// connection setup
+//  connection setup
 async function run() {
     try {
         await client.connect();
