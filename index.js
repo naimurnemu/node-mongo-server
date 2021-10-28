@@ -55,9 +55,6 @@ async function run() {
             const newUser = req.body;
             const result = await usersCollection.insertOne(newUser);
 
-            // console.log("Got new user", req.body);
-            // console.log("added user", result);
-
             res.send(result);
         });
 
@@ -70,13 +67,12 @@ async function run() {
             console.log("deleting user with id", result);
 
             res.json(result);
-            // res.send("going to delete");
         });
     } finally {
         // await client.close();
     }
 }
-run().catch(console.dir());
+run().catch(console.dir);
 
 // app.METHOD
 app.get("/", (req, res) => {
@@ -85,6 +81,3 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log("running server on port", port);
 });
-
-// dbUser: spidermongo-1
-// dbpassword: 9mkL0UMWnH7WjZ24
